@@ -1,5 +1,11 @@
-import { observable } from 'mobx'
+ import { makeAutoObservable } from 'mobx'
 export default class PeliculasStore
 {
-	@observable nombre = "Pesadilla en la calle del infierno"
+	constructor()
+	{ makeAutoObservable(this) }
+  nombre = "Pesadilla en la calle del infierno"
+	cambiarNombre( nombre )
+	{
+		this.nombre = nombre
+	}
 }
