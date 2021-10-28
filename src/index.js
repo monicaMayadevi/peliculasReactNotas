@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import Home from './home'
-import ListadoPeliculasAdulto from './peliculas/listadoPeliculasAdulto'
+import ListadoPeliculas from './peliculas/listado'
 import Footer from './footer'
 import PeliculasStore from './stores/PeliculasStore'
 
@@ -16,7 +16,7 @@ ReactDOM.render
 	  <div className="container-fluid">
 	    <Switch>
 	        <Route exact path="/" component={ Home }/>
-	        <Route exact path="/peliculas" component={ ListadoPeliculasAdulto }/>
+	        <Route exact path="/peliculas" component={ ListadoPeliculas }/>
 	    </Switch>
 	    <Footer/>
 	  </div>
