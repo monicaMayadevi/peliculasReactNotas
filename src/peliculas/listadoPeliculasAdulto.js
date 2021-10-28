@@ -1,7 +1,8 @@
 import { inject,observer } from 'mobx-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import VerPelicula from '../stores/VerPelicula'
+import VerPeliculaLista from './VerPeliculaLista'
+import VerPeliculaCard from './VerPeliculaCard'
 
 class ListadoPeliculasAdulto extends React.Component
 {
@@ -11,7 +12,6 @@ class ListadoPeliculasAdulto extends React.Component
 	}
 	render()
 	{
-
 		const { peliculas } = this.props
 	/*	const peliculasAyA = peliculas.listado.filter( pelicula => pelicula.clasificacion != 'A' ) */
 		return (
@@ -21,17 +21,30 @@ class ListadoPeliculasAdulto extends React.Component
 				 <h2>Listado de peliculas</h2>
 
 				<br/>
+				<table class="table">
+         <tbody>
+          <tr>
+ 		    		{ peliculas.listado.map(pelicula => (
+							<VerPeliculaCard datos={ pelicula }/>
+		       ))}
+          </tr>
+	       </tbody>
+	      </table>
 				<div>
-							 <ul>
-		                { peliculas.listado.map(pelicula => (
-			                    <VerPelicula datos={ pelicula }/>
+					 <ul>
+		            { peliculas.listado.map(pelicula => (
+			             <VerPeliculaLista datos={ pelicula }/>
 								 ))}
-							</ul>
+				   </ul>
 	    	</div>
            <br />
-				<Link to="/">Home</Link>
-		  </div>
-		)
-	}
-}
+					 <div class="text-center"  >
+				     <Link to="/">
+	             <img src="../img/home.png"  width="50" height="50" />
+				     </Link>
+				   </div>
+		      </div>
+		   )
+	  }
+ }
 export default inject( 'peliculas' )( observer ( ListadoPeliculasAdulto ))

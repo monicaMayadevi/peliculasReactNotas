@@ -1,7 +1,8 @@
 import { inject,observer } from 'mobx-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import VerPelicula from '../stores/VerPelicula'
+import VerPeliculaLista from './VerPeliculaLista'
+import VerPeliculaCard from './VerPeliculaCard'
 
 class ListadoPeliculasInfantil extends React.Component
 {
@@ -13,20 +14,31 @@ class ListadoPeliculasInfantil extends React.Component
 		const peliculasAyA = peliculas.listado.filter( pelicula => pelicula.clasificacion == 'A' )
 		return (
       <div>
-			  <h1>Listado de peliculas</h1>
-				<h2>{ peliculas.titulo }</h2>
-
-
+				<h1>{ peliculas.titulo }</h1>
+				 <h2>Listado de peliculas</h2>
+				<br/>
+				<table class="table">
+ 				 <tbody>
+				  <tr>
+				   { peliculasAyA.map(pelicula => (
+							<VerPeliculaCard datos={ pelicula }/>
+				   ))}
+  				</tr>
+	  		 </tbody>
+				</table>
 				<div>
-
-							 <ul>
-		                { peliculasAyA.map(pelicula => (
-			                    <VerPelicula datos={ pelicula }/>
-								 ))}
-							</ul>
-	    	</div>
-           <br />
-				<Link to="/">Home</Link>
+    			 <ul>
+		         { peliculasAyA.map(pelicula => (
+		            <VerPeliculaLista datos={ pelicula }/>
+		  			 ))}
+					</ul>
+	      </div>
+        <br />
+				<div class="text-center"  >
+				  <Link to="/">
+	          <img src="../img/home.png"  width="50" height="50" />
+				  </Link>
+				</div>
 		  </div>
 		)
 	}

@@ -16,11 +16,13 @@ ReactDOM.render
 	<Provider peliculas={ peliculas }>
 	<HashRouter>
 	  <div className="container-fluid">
+
 	    <Switch>
 	        <Route exact path="/" component={ Home }/>
 	        <Route exact path="/peliculasAdulto" component={ ListadoPeliculasAdulto }/>
 					<Route exact path="/peliculasInfantil" component={ ListadoPeliculasInfantil }/>
 	    </Switch>
+			<br />
 	    <Footer/>
 	  </div>
 	</HashRouter>
