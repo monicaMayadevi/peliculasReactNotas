@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import Home from './home'
 import ListadoPeliculasAdulto from './peliculas/listadoPeliculasAdulto'
+import ListadoPeliculasInfantil from './peliculas/listadoPeliculasInfantil'
+
 import Footer from './footer'
 import PeliculasStore from './stores/PeliculasStore'
 
@@ -16,7 +18,8 @@ ReactDOM.render
 	  <div className="container-fluid">
 	    <Switch>
 	        <Route exact path="/" component={ Home }/>
-	        <Route exact path="/peliculas" component={ ListadoPeliculasAdulto }/>
+	        <Route exact path="/peliculasAdulto" component={ ListadoPeliculasAdulto }/>
+					<Route exact path="/peliculasInfantil" component={ ListadoPeliculasInfantil }/>
 	    </Switch>
 	    <Footer/>
 	  </div>

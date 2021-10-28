@@ -3,7 +3,7 @@ export default class PeliculasStore
 {
 	constructor()
 	{ makeAutoObservable(this) }
-  nombre = "Pesadilla en la calle del infierno"
+  titulo = "Video centro"
    listado = [
 		{ nombre: 'Viernes 13', genero: 'Terror', clasificacion: 'C' },
 		{ nombre: 'Bambi', genero: 'Infantil', clasificacion: 'A' },
@@ -13,7 +13,7 @@ export default class PeliculasStore
 
 	cambiarNombre( nombre,indice )
 	{
-		this.listado[0].nombre = nombre
-    this.nombre = nombre
+/*		this.listado[0].nombre = nombre*/
+    this.titulo = nombre
 	}
 }

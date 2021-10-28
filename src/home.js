@@ -11,8 +11,9 @@ class Home extends React.Component
       <div>
 			  <h1>Página home</h1>
 				<br/>
-				<Link to="/peliculas">Catalogo de Peliculas</Link>
+				<Link to="/peliculasAdulto">Catalogo de Peliculas Adulto</Link>
 				<br />
+				<Link to="/peliculasInfantil">Catalogo de Peliculas Infantil</Link>
 		  </div>
 		)
 	}
