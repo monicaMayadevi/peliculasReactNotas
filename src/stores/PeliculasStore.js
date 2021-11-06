@@ -10,6 +10,8 @@ export default class PeliculasStore
 
 async cargarListado()
 {
+  this.errorListado = false
+
   try
   {
     this.listado = await servicioPeliculas.leerPeliculas()
@@ -18,6 +20,7 @@ async cargarListado()
   catch(error)
   {
     console.error(error)
+    this.errorListado = true
     this.listadoCargado = false
   }
 }
@@ -26,6 +29,7 @@ limpiar()
 {
   this.listado = []
   this.listadoCargado = false
+  this.errorListado = false
 }
 
 	cambiarNombre( nombre,indice )
