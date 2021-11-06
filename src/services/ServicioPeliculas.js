@@ -1,3 +1,4 @@
+
 const SERVIDOR = 'https://monicamayadevi.github.io/peliculas'
 const leerPeliculas = async() =>
 {
@@ -8,9 +9,6 @@ const leerPeliculas = async() =>
 	  return response.json()
   else
 	  throw Error( 'error al leer peliculas' )
-
-
-
 }
 
 export default { leerPeliculas }

@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom'
 
 class ListadoPeliculas extends React.Component
 {
+	constructor(props)
+	{
+		super(props)
+		const { peliculas } = props
+		if( ! peliculas.listadoCargado )
+		  peliculas.cargarListado()
+	}
 	renombrarPelicula()
 	{
 		console.log("ejecutado");
@@ -18,6 +25,17 @@ class ListadoPeliculas extends React.Component
 				<h2>{ peliculas.nombre }</h2>
 				<button type="button" onClick={ () => this.renombrarPelicula() }>Cambiar nombre</button>
 				<br/>
+				{
+					peliculas.errorListado &&
+					(
+						<div class="alert alert-danger"
+onClick={ () => peliculas.errorListado = false }
+						>
+						   Hubo un error al solicitar las peliculas.
+							 Por favor mientasela a tu administrador de sistemas.
+						</div>
+					)
+				}
 				<div>
           <h3>Titulos</h3>
 					<ul>
