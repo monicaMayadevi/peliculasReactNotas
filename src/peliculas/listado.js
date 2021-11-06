@@ -25,6 +25,17 @@ class ListadoPeliculas extends React.Component
 				<h2>{ peliculas.nombre }</h2>
 				<button type="button" onClick={ () => this.renombrarPelicula() }>Cambiar nombre</button>
 				<br/>
+				{
+					peliculas.errorListado &&
+					(
+						<div class="alert alert-danger"
+onClick={ () => peliculas.errorListado = false }
+						>
+						   Hubo un error al solicitar las peliculas.
+							 Por favor mientasela a tu administrador de sistemas.
+						</div>
+					)
+				}
 				<div>
           <h3>Titulos</h3>
 					<ul>
